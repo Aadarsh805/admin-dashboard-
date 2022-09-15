@@ -2,7 +2,7 @@ import React from 'react'
 
 const Area = () => {
   return (
-    <div>Area</div>
+    <div className='area'>Area</div>
   )
 }
 

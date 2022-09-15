@@ -2,7 +2,7 @@ import React from 'react'
 
 const Financial = () => {
   return (
-    <div>Financial</div>
+    <div className='financial'>Financial</div>
   )
 }
 
