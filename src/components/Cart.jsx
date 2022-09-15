@@ -1,8 +1,9 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <div className='cart'>Cart</div>
   )
 }
 
