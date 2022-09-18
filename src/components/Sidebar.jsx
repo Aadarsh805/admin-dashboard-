@@ -4,16 +4,17 @@ import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { links } from "../data/dummy";
-import {useStateContext} from '../contexts/ContextProvider'
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const {activeMenu, setActiveMenu, screenSize } = useStateContext()
+  const { activeMenu, setActiveMenu, screenSize, currentColor } =
+    useStateContext();
 
   const handleCloseSidebar = () => {
-    if(activeMenu && screenSize <= 900){
-      setActiveMenu(false )
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
     }
-  }
+  };
 
   const activeLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
@@ -36,7 +37,7 @@ const Sidebar = () => {
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
-                onClick={() => setActiveMenu(prev => !prev)}
+                onClick={() => setActiveMenu((prev) => !prev)}
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />
@@ -53,8 +54,11 @@ const Sidebar = () => {
                     to={`/${link.name}`}
                     key={link.name}
                     onClick={handleCloseSidebar}
-                    className={(isActive) =>
-                      isActive ? normalLink : activeLink
+                    style={({isActive}) => ({
+                      backgroundColor: isActive ? currentColor: '',
+                    })}
+                    className={({isActive}) =>
+                      isActive ? activeLink : normalLink
                     }
                   >
                     {link.icon}
