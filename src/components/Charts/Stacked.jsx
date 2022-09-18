@@ -3,7 +3,7 @@ import {ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Lege
 import {stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis} from '../../data/dummy'
 
 
-const Stacked = ({width, height}) => {
+const   Stacked = ({width, height}) => {
   return (
     <ChartComponent 
       width={width}
